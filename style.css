@@ -36,7 +36,7 @@ html{
 /*============================== Hamburger region ==================================*/
 
 .hamburger{
-    color: #fff;
+    color: #dadde1;
     cursor: pointer;
     display: hidden;
     -webkit-transition: 0.3s ease-in-out;
@@ -154,11 +154,11 @@ html{
 }
 .navbar.sticky{
     padding: 10px 100px;
-    background: rgb(255, 180, 180);
+    background: rgb(237,153,169);
     
 }
 .navbar .logo{
-    color: rgb(100, 33, 100);
+    color: rgb(107, 65, 102);
     font-size: 30px;
 }
 
@@ -599,7 +599,8 @@ html{
 }
 
 .projects .carousel .card:hover{
-    background: rgb(56, 33, 53);
+    background: rgb(255, 211, 215);
+    color: black;
 }
 .projects .carousel .card .box{
     display: flex;
@@ -628,7 +629,7 @@ html{
     transition: all 0.3s ease;
 }
 .projects .carousel .card:hover img{
-    border-color: #fff;
+    border-color: black;
 }
 
 .owl-dots {
@@ -780,7 +781,7 @@ section{
 
 #footer{
     text-align: center;
-    background: rgb(255, 180, 180);
+    background: rgb(237,153,169);
     padding: 30px 0;
     color: #07080B;
     font-weight: 700;
@@ -869,6 +870,14 @@ section{
 
 }
 
+@media screen and (min-width: 360px) and (max-width: 538px) {
+    .about .about-content .right .text{
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+}
 @media screen and (min-width: 360px) and (max-width: 640px) {
     .navbar .logo{
         flex-direction: row;
@@ -888,10 +897,6 @@ section{
         font-size: 25px;
         font-weight: 700;
     }
-    .about-content{
-        flex-direction: column;
-        font-size: 100%;
-    }
     .btn-md{
         font-size: medium;
     }
@@ -902,6 +907,10 @@ section{
         width: auto;
         height: auto;
         flex-direction: column;
+    }
+    .about-content{
+        flex-direction: column;
+        font-size: 100%;
     }
     .about .about-content .right{
         flex-direction: column;

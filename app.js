@@ -15,7 +15,8 @@ $(document).ready(function(){
         navMenu.classList.remove("active");  
     }))
 
-    
+
+    // Scrolling Button Btn
     $(window).scroll(function(){
 
         if(this.scrollY > 200){
@@ -24,7 +25,6 @@ $(document).ready(function(){
                 $('.navbar').removeClass("sticky");
                 }
 
-          // Scrolling Button Btn
           if(this.scrollY >500){
             $('.scroll-up-btn').addClass("show");
             }else{
