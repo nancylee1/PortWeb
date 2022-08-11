@@ -17,7 +17,7 @@ html{
 
 .container{
     max-width: 1300px;
-    padding: 0px 100px;
+    padding: 0px 2rem;
     margin: auto;
     z-index: 10;
 }
@@ -33,13 +33,53 @@ html{
     margin-bottom: 12px;
 }
 
-/* .menu-btn{
+/*============================== Hamburger region ==================================*/
+
+.hamburger{
     color: #fff;
     cursor: pointer;
-    display: none;
-} */
+    display: hidden;
+    -webkit-transition: 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
+}
 
-/* .list{
+@media(max-width: 768px){
+    .hamburger{
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    .nav-menu{
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        gap: 0; 
+        flex-direction: column;
+        background-color: none;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+    }
+}
+
+
+.nav-menu.active{
+    left: 0;
+}
+
+.hamburger:hover{
+    background:rgb(220, 159, 220);
+}
+
+.list{
     margin: 16px 0;
     list-style: none;
 }
@@ -50,7 +90,9 @@ html{
 
 .list li span{
     padding-left: 50px;
-} */
+}
+
+/*=================================== Hamburger regionend ==============================*/
 
 .btn-md{
     display:inline-block;
@@ -231,12 +273,14 @@ html{
     width: 55%;
     padding: 0 20px;
     overflow: hidden;
+    display: flex; 
 }
 .about .about-content .left img{
-    height: 470px;
-    width: 400px;
+    height: auto;
+    max-width: 20rem;
     object-fit: cover;
     border-radius: 50%;
+    overflow: hidden;
 }
 
 .about .about-content .right{
@@ -251,13 +295,13 @@ html{
     margin-bottom: 10px;
 }
 .about .about-content .right p{
-    text-align: justify;
+    text-align: left;
 }
 .about .about-content .right .text span{
     color: rgb(160, 59, 160);
 }
 .about .about-content .right .table{
-    width: 500px;
+    max-width: 500px;
     padding: 10px 0;
     margin-left: 0px;
 }
@@ -427,10 +471,11 @@ html{
     padding: 10px 0;
     margin-bottom: 10px;
     color: rgb(100, 33, 100);
+    display: flex;
 }
 .skills .skill-content .left p{
     color: gray;
-    text-align: justify;
+    text-align: left;
     line-height: 1.4;
     padding-top: 15px;
     font-size: 17px;
@@ -604,6 +649,12 @@ html{
 
 /*=============== Contact Me Section ================== */
 
+/* #contact{
+    background-image: url(/images/youcandoit.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+} */
 section{
     padding: 40px 0;
     background: #07080B;
@@ -747,14 +798,15 @@ section{
     bottom: 10px;
     text-align: center;
     line-height: 45px;
-    color: #fff;
-    z-index: 9999;
+    color: lightpink;
+    z-index: 999;
     font-size: 30px;
     border-radius: 6px;
     cursor: pointer;
     opacity: 0;
     pointer-events: none;
     transition: all 0.3s ease;
+    
 }
 
 .scroll-up-btn.show{
@@ -762,6 +814,197 @@ section{
     pointer-events: auto;
     bottom: 30px;
 }
+
+
+@media screen and (max-width: 1100px) {
+    .about-content{
+        flex-direction: column;
+    }
+    
+    /* #services{
+        display: none;
+    } */
+    
+}
+
+@media screen and (min-width: 601px) and (max-width: 1100px) {
+    .about-content{
+        flex-direction: column;
+    }
+    .skill-content{
+        flex-direction: column;
+    }
+    #about{
+        width: auto;
+        height: auto;
+        flex-direction: column;
+    }
+    /* .nav-menu{
+        display: none;
+    } */
+
+}
+
+@media screen and (min-width: 641px) and (max-width: 962px) {
+    .navbar .logo{
+        flex-direction: row;
+        width: auto;
+        height: auto;
+        font-size:100%;
+    }
+    /* .nav-menu{
+        display: none;
+    } */
+    .about-content{
+        flex-direction: column;
+    }
+    .skill-content{
+        flex-direction: column;
+    }
+    #about{
+        width: auto;
+        height: auto;
+        flex-direction: column;
+    }
+
+}
+
+@media screen and (min-width: 360px) and (max-width: 640px) {
+    .navbar .logo{
+        flex-direction: row;
+        width: auto;
+        height: auto;
+        font-size: 100%;
+    }
+    .showcase-text{
+        padding-top: 200px;
+        padding-left: 70px;
+    }
+    .showcase-text .text-2{
+        font-size: 60px;
+        font-weight: 700;
+    }
+    .showcase-text .text-3{
+        font-size: 25px;
+        font-weight: 700;
+    }
+    .about-content{
+        flex-direction: column;
+        font-size: 100%;
+    }
+    .btn-md{
+        font-size: medium;
+    }
+    .skill-content{
+        flex-direction: column;
+    }
+    #about{
+        width: auto;
+        height: auto;
+        flex-direction: column;
+    }
+    .about .about-content .right{
+        flex-direction: column;
+        width: auto;
+        height: auto;
+    }
+    /* .nav-menu{
+        display: none;
+    } */
+    .contact-content .column.left{
+        display: none;
+    }
+    .contact-content .column.right{
+        flex-direction: column;
+        width: auto;
+        height: auto;
+    }
+    .skill-content .column.right{
+        flex-direction: column;
+        width: auto;
+        height: auto;
+    }
+    .skill-content .column.left{
+        flex-direction: column;
+        width: auto;
+        height: auto;
+    }
+    *{
+        overflow-x:auto;
+    }
+
+
+    .services .service-content .main{
+        width: 100%;
+        height: auto;
+        text-align: center;
+        border-radius: 5px;
+        position: relative;
+        cursor: pointer;
+        flex-direction: column;
+    }
+    .service{
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        position: absolute;
+        bottom: 0;
+        z-index: 1;
+        transform: scale(1.0);
+        box-shadow: 0 0 20px -15px white;
+        transition: transform 0.8s;
+        text-align: center;
+        flex-direction: column;
+    }
+    .service-logo{
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        margin: 0px auto 0;
+        background: white;
+        border: 18px solid lightgray; 
+        transform: transform 1s;
+        flex-direction: column;
+    }
+    .service-logo i{
+        color: lightgray; 
+        width: 50px;
+        margin-top: 20px;
+        flex-direction: column;
+    }
+    .service h4::after{
+        content: '';
+        width: 40px;
+        height: 30px;
+        background: linear-gradient(to right, white, lightgray);
+        position: absolute;
+        right: -5px;
+        top: -5px;
+        z-index: -1;
+        flex-direction: column;
+    }
+    .service h4::before{
+        content: '';
+        width: 40px;
+        height: 30px;
+        background: linear-gradient(to right, white, lightgray);
+        position: absolute;
+        right: -5px;
+        top: -5px;
+        z-index: -1;
+        flex-direction: column;
+    }
+    .service h4{
+        height: 28px;
+        width: 80%;
+        background: white; 
+        margin: 60px auto;
+        position: relative;
+        flex-direction: column;
+    }
+}
+
+
 
 
 
